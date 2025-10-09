@@ -390,8 +390,10 @@ function App() {
                           <Popup>
                             <h1>{lib.to}</h1>
                             <br></br>
-                            {popupData.address.split("<a href")[0]} <br></br>
+                            {lib.address.split("<a href")[0]} <br></br>
+                            Distance from you : {lib.distance} km <br></br>
                             <a href={lib.link}> Read More</a>
+                            
                           </Popup>
                           {stateJsonData &&
                             stateJsonData.geometry.type.toLowerCase() ===
@@ -502,7 +504,7 @@ function App() {
               </strong>
             </p>{" "}
             {nearbyclicked
-              ? libraries.map((nearby) => <li><a href={nearby.link}>{nearby.to}</a></li>)
+              ? libraries.map((nearby) => <li className="nearbyClickedLib"><a href={nearby.link}>{nearby.to}</a></li>)
               : fetchedLibrary().map((data) => (
                   <div>
                     {" "}

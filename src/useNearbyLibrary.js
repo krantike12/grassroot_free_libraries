@@ -49,8 +49,8 @@ export default function useNearbyLibraries() {
         long : lib1.long,
         user_lat : data.coords.latitude,
         user_long : data.coords.longitude,
-        link : lib1.Url
-        
+        link : lib1.Url,
+        address : lib1.address
        })
         
     }          

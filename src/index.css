@@ -37,7 +37,10 @@ code {
     padding: 10px;
     font-size: 12px;
 }
-
+.nearbyClickedLib:hover{
+  cursor: pointer;
+  color: rgb(0, 6, 175);  
+}
 
 ::-webkit-scrollbar-track{
   background-color: rgb(20, 0, 67);
