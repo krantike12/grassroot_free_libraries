@@ -30,7 +30,7 @@ import L from 'leaflet'
 
     user : L.icon({
       iconId : 4,
-      iconUrl : "https://lh5.googleusercontent.com/proxy/6nFGUpHIdXUklL2Slq9tn9X7j6K-L0fGH2pizRJfsZV3ESCqkbITlYmx8bQTMSzVqopuinEjQS_o00VKHAtNvJVVI28ujOap097wtBOUbFjWhcmZC3_IIvhn3HwiEzxpcpXlaJLV0yMiiIG5v95QXUAvrw",
+      iconUrl : "https://play-lh.googleusercontent.com/e8oPW4cybOdA66KTzKe1nU38wgxcbOewa8tQGs6D3U6_GwIXayV_mOslsxjsZJpeq2o",
       iconSize: [38, 38], // Size of the icon
       iconAnchor: [19, 38], // Point where the icon should anchor (coordinates for centering the icon)
       popupAnchor: [0, -38], // Position of the popup relative to the icon

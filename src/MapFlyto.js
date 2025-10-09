@@ -13,7 +13,7 @@ function MapFlyto({ trigger }) {
     const {searchQuery, fetchedLibrary, newArray, nearbyClicked, curPos} = useContext(SelectedContext)
     //console.log(searchQuery)
 
-    console.log("curPos in MapFlyto:", curPos);
+   //console.log("curPos in MapFlyto:", curPos);
 
 
     //console.table(statesJson)

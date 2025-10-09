@@ -31,7 +31,7 @@ import useNearbyLibraries from "./useNearbyLibrary";
 export const SelectedContext = createContext();
 
 function App() {
-  console.log(stateJson);
+ //console.log(stateJson);
 
   //useLibrary hook
   const { libraries, fetchLibraries } = useNearbyLibraries();
@@ -84,12 +84,12 @@ function App() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((data) => {
       if (!navigator.geolocation) {
-        console.log(curPos);
+        //console.log(curPos);
         return;
       } else {
-        console.log(data);
+       // console.log(data);
         setCurPos(data.coords);
-        console.log(libraries);
+       // console.log(libraries);
       }
     });
   }, [libraries]);
@@ -131,9 +131,9 @@ function App() {
       const filterDatabystate = newArray.filter((libstate) =>
         libstate.address.toLowerCase().includes(searchQuery.toLowerCase())
       );
-      console.log(filterData.length);
-      console.log(filterType);
-      console.log(filterDatabystate.length);
+     // console.log(filterData.length);
+      // console.log(filterType);
+       // console.log(filterDatabystate.length);
       // used for merging 2 arrays so 2 different filters has been merged together
       return [
         ...new Set([
@@ -147,11 +147,11 @@ function App() {
     return newArray;
   };
 
-  console.log(fetchedLibrary().length);
+  //console.log(fetchedLibrary().length);
 
   useEffect(() => {
     if (curPos) {
-      console.log(curPos);
+     // console.log(curPos);
     }
   }, [curPos]);
 
@@ -160,7 +160,7 @@ function App() {
   //console.log("yaha tak chal rha hai")
   useEffect(() => {
     if (newArray.length === 0) {
-      console.log("Data not ready yet");
+     // console.log("Data not ready yet");
     }
 
     //to calculate distance between two libraries
@@ -257,7 +257,7 @@ function App() {
   // const showMarker =  () => {
 
   const showMarker = () => {
-    console.log(clicked);
+    //console.log(clicked);
   };
 
   //alert(clicked.title)
@@ -273,14 +273,14 @@ function App() {
 
   //console.log(markerData);
 
-  console.log(stateJson.name, stateJson.population_2025);
+  //console.log(stateJson.name, stateJson.population_2025);
   //const colorOptions = {color : stateJson.population_2025 > 10000000 ? "green" : "pink"}
 
   //const stateRegex = /,\s*([A-Za-z\s]+),\s*\d{6}/
   useEffect(() => {
     if (map) {
       console.error("Error Occured", map);
-      console.log("Map is ready", map);
+     // console.log("Map is ready", map);
     }
   }, [map]);
 
@@ -367,7 +367,7 @@ function App() {
                   (nLib) =>
                     nLib.to.toLowerCase() === popupData.title.toLowerCase()
                 );
-                console.log(nearbyLib);
+               // console.log(nearbyLib);
 
                 return (
                   /* <Circle center={[lib.lat ,lib.long]} radius={lib.radius || 10000} opacity={getOpacityByPopulation(lib.population)} fillColor="blue" color="transparent" bindlabel={"test"}>
