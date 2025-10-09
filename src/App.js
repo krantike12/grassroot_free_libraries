@@ -284,6 +284,10 @@ function App() {
     }
   }, [map]);
 
+  useEffect(()=> {
+
+  })
+
   return (
     <SelectedContext.Provider
       value={{
@@ -293,6 +297,8 @@ function App() {
         clicked,
         map,
         getDistancee,
+        nearbyClicked: nearbyclicked,
+        curPos
       }}
     >
       <div className="">
@@ -311,10 +317,12 @@ function App() {
           {curPos && (
             <MapContainer
               center={[curPos.latitude, curPos.longitude]}
-              zoom={4.5}
+              zoom={ 4.5}
               style={{ width: "99vw", height: "99vh", zIndex: 7 }}
               whenCreated={(mapInstance) => setMap(mapInstance)}
             >
+              <Marker position={[curPos.latitude, curPos.longitude]}
+              icon={CustomIcon.user}><Tooltip permanent={true} direction="top" offset={[0, -10]}>"You are here"</Tooltip></Marker>
               <input
                 className="searchBar"
                 type="text"
@@ -331,13 +339,15 @@ function App() {
               <MapFlyto
                 lat={fetchedLibrary.lat}
                 long={fetchedLibrary.long}
-                trigger={searchQuery}
+                trigger={searchQuery? searchQuery : nearbyclicked}
               />
               <MapFlybyClick />
 
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  detectRetina={true}
+
               />
               {fetchedLibrary().map((lib) => {
                 const popupData = newArray.find(
@@ -381,7 +391,7 @@ function App() {
                             <h1>{lib.to}</h1>
                             <br></br>
                             {popupData.address.split("<a href")[0]} <br></br>
-                            <a href={popupData.Url}> Read More</a>
+                            <a href={lib.link}> Read More</a>
                           </Popup>
                           {stateJsonData &&
                             stateJsonData.geometry.type.toLowerCase() ===
@@ -470,7 +480,13 @@ function App() {
               <MapFlyto
                 lat={curPos.latitude}
                 long={curPos.longitude}
-                trigger={flytrigger}
+                zoom={4.5}
+                trigger={searchQuery}
+                preferCanvas={true}
+  zoomAnimation={true}
+  zoomAnimationThreshold={10}
+  scrollWheelZoom={true}
+                //trigger={flytrigger}
               />
 
               <Legends customIcon={CustomIcon} />
@@ -486,7 +502,7 @@ function App() {
               </strong>
             </p>{" "}
             {nearbyclicked
-              ? libraries.map((nearby) => <li>{nearby.to}</li>)
+              ? libraries.map((nearby) => <li><a href={nearby.link}>{nearby.to}</a></li>)
               : fetchedLibrary().map((data) => (
                   <div>
                     {" "}

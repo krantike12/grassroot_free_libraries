@@ -27,5 +27,14 @@ import L from 'leaflet'
       iconAnchor: [19, 38], // Point where the icon should anchor (coordinates for centering the icon)
       popupAnchor: [0, -38], // Position of the popup relative to the icon
     }),
+
+    user : L.icon({
+      iconId : 4,
+      iconUrl : "https://cdn-icons-png.freepik.com/512/61/61942.png",
+      iconSize: [38, 38], // Size of the icon
+      iconAnchor: [19, 38], // Point where the icon should anchor (coordinates for centering the icon)
+      popupAnchor: [0, -38], // Position of the popup relative to the icon
+
+    })
     }
 export default CustomIcon
