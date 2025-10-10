@@ -1,0 +1,47 @@
+name: Deploy React App to MilesWeb
+
+on:
+  push:
+    branches:
+      - main   # or your preferred branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 4: Build the React app
+      - name: Build project
+        run: npm run build
+
+      # Step 5: Test FTP Connection (for debugging)
+      - name: Test FTP connection
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }} -e "ls; bye"
+        continue-on-error: true  # prevents build failure if just checking
+
+      # Step 6: Upload build folder to MilesWeb
+      - name: Upload build folder to MilesWeb
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build
+          server-dir: public_html
