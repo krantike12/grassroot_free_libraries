@@ -26,7 +26,7 @@ jobs:
 
       # Step 4: Build the React app
       - name: Build project
-        run: CI=false npm run build
+        run: npm run build
 
       # Step 5: Test FTP Connection (for debugging)
       - name: Test FTP connection
@@ -43,6 +43,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build
+          local-dir: build/
           server-dir: public_html/map-libraries
+          protocol: ftp
+          secure: false
 
