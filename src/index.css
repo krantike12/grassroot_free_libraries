@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+   background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  background-image: radial-gradient(18% 28% at 24% 50%, #CEFAFFFF 7%, #073AFF00 100%), radial-gradient(18% 28% at 18% 71%, #4200A059 6%, #073AFF00 100%), radial-gradient(70% 53% at 36% 76%, #73F2FFFF 0%, #073AFF00 100%), radial-gradient(42% 53% at 15% 94%, #FFFFFFFF 7%, #073AFF00 100%), radial-gradient(42% 53% at 34% 72%, #FFFFFFFF 7%, #073AFF00 100%), radial-gradient(18% 28% at 35% 87%, #FFFFFFFF 7%, #073AFF00 100%), radial-gradient(31% 43% at 7% 98%, #FFFFFFFF 24%, #073AFF00 100%), radial-gradient(21% 37% at 72% 23%, #D3FF6D9C 24%, #073AFF00 100%), radial-gradient(35% 56% at 91% 74%, #8A4FFFF5 9%, #073AFF00 100%), radial-gradient(74% 86% at 67% 38%, #6DFFAEF5 24%, #073AFF00 100%), linear-gradient(125deg, #4EB5FFFF 1%, #4C00FCFF 100%);
+  background-size: cover;         /* Make gradient stretch */
+  background-repeat: no-repeat;   /* Stop repeating */
+  background-attachment: fixed;
+  font-family: monospace;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.searchAibtn {
+  position: absolute;
+  z-index: 2000;
+  top: 11.5px;
+  left: 270px;
+  background: white;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: width 1s;
+}
+
+.searchBar {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+
+  top: 12px;
+  z-index: 1200;
+}
+
+.header{
+       display: flex;
+    height: 57px;
+    width: 100%;
+    position: fixed;
+    font-family: monospace;
+    padding: 15px;
+    font-size: 20px;
+    gap: 9px;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    z-index: 200;
+}
+
+
+
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-family: monospace;
+  font-size: 14px;
+  text-align: left;
+  padding-bottom: 20px;
+  margin-bottom: 100px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px;
+}
+
+.data-table thead {
+  background-color: #f5f5f5;
+  position: sticky;
+  top: 0;
+  /* Keeps header visible when scrolling */
+  z-index: 1;
+  table-layout: fixed;
+}
+
+.data-table th {
+  background-color: rgb(55, 65, 81);
+  font-weight: bold;
+  text-align: left;
+  color: white;
+}
+
+/* .body-bulk { */
+  /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=247776&c2=68711d&gt=l&gd=dcl
+*/
+  /* background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  background-image: radial-gradient(18% 28% at 24% 50%, #CEFAFFFF 7%, #073AFF00 100%), radial-gradient(18% 28% at 18% 71%, #4200A059 6%, #073AFF00 100%), radial-gradient(70% 53% at 36% 76%, #73F2FFFF 0%, #073AFF00 100%), radial-gradient(42% 53% at 15% 94%, #FFFFFFFF 7%, #073AFF00 100%), radial-gradient(42% 53% at 34% 72%, #FFFFFFFF 7%, #073AFF00 100%), radial-gradient(18% 28% at 35% 87%, #FFFFFFFF 7%, #073AFF00 100%), radial-gradient(31% 43% at 7% 98%, #FFFFFFFF 24%, #073AFF00 100%), radial-gradient(21% 37% at 72% 23%, #D3FF6D9C 24%, #073AFF00 100%), radial-gradient(35% 56% at 91% 74%, #8A4FFFF5 9%, #073AFF00 100%), radial-gradient(74% 86% at 67% 38%, #6DFFAEF5 24%, #073AFF00 100%), linear-gradient(125deg, #4EB5FFFF 1%, #4C00FCFF 100%);
+  height: 100vh;
+
+} */
+
+
+
+.mainDiv {
+  position: relative;
+  z-index: 2;
+  top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Bulkform {
+  background-color: rgb(96 122 175 / 23%);
+    /* border: 1px solid rgba(255, 255, 255, 0.125); */
+    flex-direction: column;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #688fb0;
+    border-radius: 45px;
+    height: 262px;
+    font-family: monospace;
+    font-size: 12px;
+    gap: 10px;
+}
+
+/* .data-table tr:hover {
+  background-color: #e6f7ff;
+  transition: background-color 0.3s ease;
+} */
+
+.data-table tr{
+  background-color: rgb(30, 41, 57);
+  color: white;
+}
+
+
+.chatMessage {
+  background: rgb(98 195 231 / 40%);
+  padding: 10px;
+  margin: 3px;
+  margin-bottom: 5px;
+  border-radius: 12px 5px 5px 12px;
+  font-family: monospace;
+
+}
+
+.loading {
+  margin-left: 10px;
+  font-family: monospace;
+}
+
+.loadingText {
+  position: relative;
+  font-family: monospace;
+}
+
+.searchBarDiv {
+  position: absolute;
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  z-index: 1200;
+  left: 48px;
+  top: 10px;
+  transition: width 2s;
+  font-family: monospace;
+}
+
+.signInBox {
+  height: 200px;
+  position: relative;
+  top: 40px;
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid rgba(235, 235, 235, 0.455);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+.detailsBar {
+  transition: width 2s;
+  position: absolute;
+  z-index: 1200;
+  top: 64px;
+  left: 50px;
+  background-color: rgb(255, 255, 255);
+  width: 230px;
+  height: 200px;
+  border: 0.5px solid black;
+  border-radius: 0px;
+  overflow: auto;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.nearbyClickedLib:hover {
+  cursor: pointer;
+  color: rgb(0, 6, 175);
+}
+
+.legendBox {
+  top: -15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(20, 0, 67);
+}
+
+.ol_detail:hover {
+  color: rgb(0, 6, 175);
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+
+    color: aqua;
+  }
+
+}
+
+.footer{
+  backdrop-filter: blur(20px);
+  font-family: monospace;
+  font-size: 14px;
+}
+
+table{
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+table thead.show-library{
+  background: white;
+  text-align: center;
+  table-layout: fixed;
+
+}
+
+table thead.show-library td{
+  padding: 20px;
+}
+
+table tbody.tb-body{
+  background-color: #688fb0;
+}
+
+table tbody.tb-body tr td{
+  padding: 10px;
+}
