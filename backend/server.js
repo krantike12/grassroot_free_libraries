@@ -34,12 +34,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const client = new MongoClient(process.env.URI)
 await client.connect()
 
-// mongoose.connect('mongodb+srv://krantike:shivam1234@users.tn37w.mongodb.net/').then(() => {
-//     console.log('Connected to MongoDB');
-//     })
-// .catch((err) => {
-//     console.error('Error connecting to MongoDB', err);
-//     });
 
 const db = client.db('library_database');
 const libraries_collection = db.collection('libraries_data');

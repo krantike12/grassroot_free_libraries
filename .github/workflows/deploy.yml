@@ -20,7 +20,11 @@ jobs:
         # Assuming package.json is in the root for React
         run: npm ci
 
+       
+
       - name: Build React app
+        env : 
+          REACT_APP_CLERK_PUBLISHABLE_KEY : ${{secrets.REACT_APP_CLERK_PUBLISHABLE_KEY}}
         run: CI=false npm run build
 
       - name: Deploy Frontend (./build) via SFTP
