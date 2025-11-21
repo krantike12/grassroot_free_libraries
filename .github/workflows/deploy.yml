@@ -65,7 +65,8 @@ jobs:
             password: ${{ secrets.FTP_PASSWORD }}
             port: 22999
             # Use the local path of your backend folder
-            local_path: ./backend/*
+            local_path: ./backend
+            rsyncArgs: "--exclude=node_modules --exclude=.env --exclude=npm-debug.log"
             # ⚠️ IMPORTANT: CHANGE THIS PATH! 
             # This must be the specific path where your MilesWeb/cPanel Node.js app is set up (e.g., outside public_html).
             remote_path: /home/${{ secrets.FTP_USERNAME }}/backend
